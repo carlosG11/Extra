@@ -1,0 +1,247 @@
+
+Create database AUX2;
+
+Use AUX2;
+
+create table USUARIO (	
+	id integer primary key,
+	usuario varchar(20),
+	perfil varchar(20),
+	nombre varchar(20),
+	paterno varchar(20),
+	materno varchar(20),
+	password varchar(20),
+	calle varchar(20), 
+	exterior varchar(20),
+	interior varchar(20),
+	colonia varchar(20),
+	municipio varchar(20),
+	telefono varchar(20), 
+	correo varchar(20),
+	sucursal varchar(20),
+	carrito varchar(120)
+);
+
+//admin
+INSERT INTO USUARIO VALUES (1,'admin','admin','Carlos','Galindo','Salinas','password','Ticoman', '944','3','coatzacoalcos','GAM','55 8629 3200', 'galinw21@gmail.com','polanco','');
+
+//sucursal polanco
+INSERT INTO USUARIO VALUES (2,'ruben','gerente','Ruben','Mendoza','Martinez','password','Cienfuegos', '300','','zacatenco','GAM','55 5555 5555', 'ruben_polanco@aux.com','polanco','');
+INSERT INTO USUARIO VALUES (3,'maria','estilista','Maria','Hernandez','Martinez','password','Coquimbo', '220','','unidad pemex','GAM','55 5555 5555', 'maria_polanco@aux.com','polanco','');
+INSERT INTO USUARIO VALUES (4,'juan','estilista','Juan','Perez','Lopez','password','Av. Universidad', '1100','12','xoco','Benito Juarez','55 5555 5555', 'juan_polanco@aux.com','polanco','');
+INSERT INTO USUARIO VALUES (5,'luisa','estilista','Maria Luisa','Jimenez','Sanchez','password','Gabriel Mancera', '1220','101','Coyoacan','Benito Juarez','55 1234 1234', 'luisa_polanco@aux.com','polanco','');
+
+//sucursal lindavista
+INSERT INTO USUARIO VALUES (6,'pedro','gerente','Pedro','Mendoza','Martinez','password','Cienfuegos', '300','','zacatenco','gam','55 5555 5555', 'pedro_lindavista@aux.com','lindavista','');
+INSERT INTO USUARIO VALUES (7,'guadalupe','estilista','Guadalupe','Hernandez','Martinez','password','Coquimbo', '220','','unidad pemex','gam','55 5555 5555', 'guadalupe_lindavista@aux.com','lindavista','');
+INSERT INTO USUARIO VALUES (8,'ramiro','estilista','Ramiro','Perez','Lopez','password','Av. Universidad', '1100','12','xoco','benito juarez','55 5555 5555', 'ramiro_lindavista@aux.com','lindavista','');
+INSERT INTO USUARIO VALUES (9,'ines','estilista','Ines','Jimenez','Sanchez','password','Gabriel Mancera', '1220','101','coyoacan','benito juarez','55 1234 1234', 'ines_lindavista@aux.com','lindavista','');
+
+//sucursal santafe
+INSERT INTO USUARIO VALUES (10,'miriam','gerente','Miriam','Mendoza','Martinez','password','Cienfuegos', '300','','zacatenco','gam','55 5555 5555', 'miriam_santafe@aux.com','santafe','');
+INSERT INTO USUARIO VALUES (11,'susana','estilista','Susana','Hernandez','Martinez','password','Coquimbo', '220','','unidad pemex','gam','55 5555 5555', 'susana_santafe@aux.com','santafe','');
+INSERT INTO USUARIO VALUES (12,'jesus','estilista','Jesus','Perez','Lopez','password','Av. Universidad', '1100','12','xoco','benito juarez','55 5555 5555', 'jesus_santafe@aux.com','santafe','');
+INSERT INTO USUARIO VALUES (13,'mariana','estilista','Mariana','Jimenez','Sanchez','password','Gabriel Mancera', '1220','101','coyoacan','benito juarez','55 1234 1234', 'mariana_santafe@aux.com','santafe','');
+
+//sucursal interlomas
+INSERT INTO USUARIO VALUES (14,'rodrigo','gerente','Rodrigo','Mendoza','Martinez','password','Cienfuegos', '300','','zacatenco','gam','55 5555 5555', 'miriam_interlomas@aux.com','interlomas','');
+INSERT INTO USUARIO VALUES (15,'alejandra','estilista','Alejandra','Hernandez','Martinez','password','Coquimbo', '220','','unidad pemex','gam','55 5555 5555', 'susana_interlomas@aux.com','interlomas','');
+INSERT INTO USUARIO VALUES (16,'alejandro','estilista','Alejandro','Perez','Lopez','password','Av. Universidad', '1100','12','xoco','benito juarez','55 5555 5555', 'jesus_interlomas@aux.com','interlomas','');
+INSERT INTO USUARIO VALUES (17,'esther','estilista','Esther','Jimenez','Sanchez','password','Gabriel Mancera', '1220','101','coyoacan','benito juarez','55 1234 1234', 'mariana_interlomas@aux.com','interlomas','');
+
+
+Sucursales{polanco, santafe, lindavista, interlomas}
+Perfiles{admin,gerente,estilista,cliente}
+
+create table PRODUCTO (	
+	id integer primary key,
+	tipo varchar(20),
+	nombre varchar(60),
+	duracion integer,
+	precio decimal(10,2)
+);
+
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (1, '', 'Premium Makeup de dia', 60, 1400.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (2, '', 'Premium Makeup con aerografo', 70, 1650.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (3, '', 'Premium Makeup de noche', 80, 1750.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (4, '', 'Esmalte natural en manos', 20, 340.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (5, '', 'Esmalte natural en pies', 20, 350.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (6, '', 'Gel en manos', 40, 460.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (7, '', 'Gel en pies', 45, 480.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (8, '', 'Manicure para caballero', 30, 500.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (9, '', 'Manicure', 45, 500.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (10, '', 'Pedicure para caballero', 65, 520.0);
+
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (11, '', 'Pedicure', 65, 520.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (12, '', 'Gel en manos con decoracion', 60, 580.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (13, '', 'Acrilico y Gel en manos', 60, 580.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (14, '', 'Manicure Gel', 55, 580.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (15, '', 'Pedicure Gel', 75, 620.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (16, '', 'Gel en manos y pies', 70, 650.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (17, '', 'Manicure y Pedicure para caballero', 100, 720.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (18, '', 'Manicure y Pedicure', 120, 720.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (19, '', 'Manicure y Pedicure gel', 140, 880.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (20, '', 'Estilizado de extensiones', 35, 140.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (21, '', 'Aplicacion de pestanas', 20, 210.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (22, '', 'Alaciado con Plancha', 50, 490.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (23, '', 'Moldeado con secadora', 50, 490.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (24, '', 'Ondas surfer', 60, 490.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (25, '', 'Ondas vintage', 60, 490.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (26, '', 'Peinado Sencillo', 45, 530.0);
+
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (27, '', 'Peinado recogido', 60, 640.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (28, '', 'Maquillaje de dia sin pestanas', 50, 800.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (29, '', 'Maquillaje de dia con pestanas', 60, 920.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (30, '', 'Alto peinado', 60, 930.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (31, '', 'Maquillaje de noche sin pestanas', 50, 990.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (32, '', 'Maquillaje de noche con pestanas', 60, 1160.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (33, '', 'Estilizado de extensiones', 35, 140.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (34, '', 'Paquete maquillaje de dia y ondas', 120, 1150.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (35, '', 'Paquete maquillaje de dia y peinado recogido', 120, 1350.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (36, '', 'Paquete maquillaje de noche y ondas', 130, 1380.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (37, '', 'Paquete maquillaje de noche y peinado recogido', 130, 1600.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (38, '', 'Corte individual', 30, 490.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (39, '', 'Paquete 2 cortes', 50, 890.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (40, '', 'Paquete 3 cortes', 70, 1090.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (41, '', 'Paquete 4 cortes', 90, 1190.0);
+insert into PRODUCTO (id, tipo, nombre, duracion, precio) VALUES (42, '', 'Tratamiento de hidratacion con Olaplex', 30, 390.0);
+
+create table CITA (	
+	id integer primary key,
+	sucursal varchar(20),
+	estilista integer,
+	estilistaNombre varchar(20),
+	estilistaPaterno varchar(20),
+	estilistaMaterno varchar(20),
+	cliente integer,
+	clienteNombre varchar(20),
+	clientePaterno varchar(20),
+	clienteMaterno varchar(20),
+	tiempo TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	duracion integer,
+	precio decimal(10,2),
+	saldo decimal(10,2),
+	estatus varchar(20)
+);
+
+create table CITAPRODUCTO (
+	id integer primary key,
+	cita integer,
+	producto integer,
+	productoNombre varchar(60),
+	productoDuracion integer,
+	productoPrecio decimal(10,2),
+	tiempo TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+create table PAGO (	
+	id integer primary key,
+	cita integer,
+	cliente integer,
+	clienteNombre varchar(20),
+	clientePaterno varchar(20),
+	clienteMaterno varchar(20),
+	importe decimal(10,2),
+	tiempo TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	tdc varchar(20),
+	propietario varchar(60),
+	caducaMes varchar(2),
+	caducaAno varchar(2),
+	cvv varchar(3)
+);
+
+
+
+delete from CITA;
+delete from CITAPRODUCTO;
+delete from PAGO;
+
+
+ALTER TABLE CITA ADD estatus varchar(20) after saldo;
+update CITA set estatus="registrada";
+
+
+ALTER TABLE CITA
+CHANGE tiempo
+        tiempo TIMESTAMP NOT NULL
+                       DEFAULT CURRENT_TIMESTAMP;
+
+
+ALTER TABLE CITAPRODUCTO ADD tiempo TIMESTAMP NOT NULL
+                       DEFAULT CURRENT_TIMESTAMP after productoPrecio;
+
+ALTER TABLE CITAPRODUCTO ADD sucursal varchar(20) after tiempo;
+
+ALTER TABLE PAGO
+CHANGE tiempo
+        tiempo TIMESTAMP NOT NULL
+                       DEFAULT CURRENT_TIMESTAMP;
+
+
+
+update usuario set sucursal="polanco" where id=1;
+
+update citaproducto set sucursal 'polanco';
+
+
+ALTER TABLE USUARIO ADD carrito varchar(120) after sucursal;
+update usuario set sucursal="polanco" where id=1;
+
+
+
+///anterior
+
+
+create table Usuario (
+Id integer primary key,
+Usuario varchar(20),
+Perfil varchar(20),
+Nombre varchar(20),
+ApellidoPaterno varchar(20),
+ApellidoMaterno varchar(20),
+Password varchar(20),
+Calle varchar(20), 
+NumExterior varchar(20),
+NumInterior varchar(20),
+Colonia varchar(20),
+Municipio varchar(20),
+Telefono varchar(20), 
+Correo varchar(20));
+
+create table Servicio (
+Id integer primary key,
+Tipo varchar(20), 
+Nombre varchar(20),
+Duracion varchar(20),
+Costo varchar(20));
+
+create table Cita (
+Id integer primary key,
+Sucursal varchar(20),
+usuario integer,
+Tiempo Timestamp,
+servicio integer,
+Estado varchar(20));
+
+create table Pago (
+Id integer primary key,
+cita integer, 
+Importe decimal(10,2),
+TC varchar(20),
+Tiempo Timestamp);
+
+INSERT INTO Usuario VALUES (
+1,
+'Admin',
+'Admin',
+'Carlos',
+'Galindo',
+'Salinas',
+'password',
+'Ticoman', 
+'944',
+'3',
+'coatzacoalcos',
+'GAM',
+'55862932', 
+'galinw21@gmail.com');
