@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
     <servlet>
         <servlet-name>SVTUsuarioRegistrar</servlet-name>
         <servlet-class>aux2.servlet.SVTUsuarioRegistrar</servlet-class>
@@ -25,49 +26,39 @@
         <servlet-class>aux2.servlet.SVTClienteCitaDesplegar</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SVTLogin</servlet-name>
-        <servlet-class>aux2.servlet.SVTLogin</servlet-class>
-    </servlet>
-    <!-- servlet>
-        <servlet-name>SVTVerificarUsuario</servlet-name>
-        <servlet-class>digimon.SVTVerificarUsuario</servlet-class>
+        <servlet-name>SVTClienteCitaConsultarFecha</servlet-name>
+        <servlet-class>aux2.servlet.SVTClienteCitaConsultarFecha</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SVTRegistrarUsuario</servlet-name>
-        <servlet-class>digimon.SVTRegistrarUsuario</servlet-class>
+        <servlet-name>SVTClienteCitaRegistrar</servlet-name>
+        <servlet-class>aux2.servlet.SVTClienteCitaRegistrar</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SVTRegistrarProducto</servlet-name>
-        <servlet-class>digimon.SVTRegistrarProducto</servlet-class>
+        <servlet-name>SVTClienteCitaBuscar</servlet-name>
+        <servlet-class>aux2.servlet.SVTClienteCitaBuscar</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SVTBuscarProducto</servlet-name>
-        <servlet-class>digimon.SVTBuscarProducto</servlet-class>
+        <servlet-name>SVTClienteCitaConsultar</servlet-name>
+        <servlet-class>aux2.servlet.SVTClienteCitaConsultar</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SVTConsultarProducto</servlet-name>
-        <servlet-class>digimon.SVTConsultarProducto</servlet-class>
+        <servlet-name>SVTClienteCitaCancelar</servlet-name>
+        <servlet-class>aux2.servlet.SVTClienteCitaCancelar</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SVTAgregarProducto</servlet-name>
-        <servlet-class>digimon.SVTAgregarProducto</servlet-class>
+        <servlet-name>SVTClientePerfilModificar</servlet-name>
+        <servlet-class>aux2.servlet.SVTClientePerfilModificar</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>SVTEliminarProducto</servlet-name>
-        <servlet-class>digimon.SVTEliminarProducto</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SVTConsultarCarrito</servlet-name>
-        <servlet-class>digimon.SVTConsultarCarrito</servlet-class>
-    </servlet-->
     <servlet>
         <servlet-name>SVTClienteProductoDesplegar</servlet-name>
         <servlet-class>aux2.servlet.SVTClienteProductoDesplegar</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SVTClienteProductoMostrar</servlet-name>
-        <servlet-class>aux2.servlet.SVTClienteProductoConsultar</servlet-class>
-    </servlet>
+        <servlet-name>SVTLogin</servlet-name>
+        <servlet-class>aux2.servlet.SVTLogin</servlet-class>
+    </servlet>    
+    
+    
     <servlet-mapping>
         <servlet-name>SVTUsuarioRegistrar</servlet-name>
         <url-pattern>/SVTUsuarioRegistrar</url-pattern>
@@ -93,45 +84,38 @@
         <url-pattern>/SVTClienteCitaDesplegar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SVTLogin</servlet-name>
-        <url-pattern>/SVTLogin</url-pattern>
-    </servlet-mapping>
-    <!-- servlet-mapping>
-        <servlet-name>SVTVerificarUsuario</servlet-name>
-        <url-pattern>/SVTVerificarUsuario</url-pattern>
+        <servlet-name>SVTClienteCitaConsultarFecha</servlet-name>
+        <url-pattern>/SVTClienteCitaConsultarFecha</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SVTRegistrarProducto</servlet-name>
-        <url-pattern>/SVTRegistrarProducto</url-pattern>
+        <servlet-name>SVTClienteCitaRegistrar</servlet-name>
+        <url-pattern>/SVTClienteCitaRegistrar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SVTBuscarProducto</servlet-name>
-        <url-pattern>/SVTBuscarProducto</url-pattern>
+        <servlet-name>SVTClienteCitaBuscar</servlet-name>
+        <url-pattern>/SVTClienteCitaBuscar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SVTConsultarProducto</servlet-name>
-        <url-pattern>/SVTConsultarProducto</url-pattern>
+        <servlet-name>SVTClienteCitaConsultar</servlet-name>
+        <url-pattern>/SVTClienteCitaConsultar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SVTAgregarProducto</servlet-name>
-        <url-pattern>/SVTAgregarProducto</url-pattern>
+        <servlet-name>SVTClienteCitaCancelar</servlet-name>
+        <url-pattern>/SVTClienteCitaCancelar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SVTEliminarProducto</servlet-name>
-        <url-pattern>/SVTEliminarProducto</url-pattern>
+        <servlet-name>SVTClientePerfilModificar</servlet-name>
+        <url-pattern>/SVTClientePerfilModificar</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SVTConsultarCarrito</servlet-name>
-        <url-pattern>/SVTConsultarCarrito</url-pattern>
-    </servlet-mapping-->
     <servlet-mapping>
         <servlet-name>SVTClienteProductoDesplegar</servlet-name>
         <url-pattern>/SVTClienteProductoDesplegar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SVTClienteProductoMostrar</servlet-name>
-        <url-pattern>/SVTClienteProductoMostrar</url-pattern>
+        <servlet-name>SVTLogin</servlet-name>
+        <url-pattern>/SVTLogin</url-pattern>
     </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

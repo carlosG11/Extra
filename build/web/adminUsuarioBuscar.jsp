@@ -102,9 +102,9 @@
                                     <div class="hr-line-dashed"></div>
                                     <div class="search-result">                                                                    
                                         <h3><a href="#" onclick="consultarUsuario(<%=voUsuarioItem.getId()%>);" ><%=voUsuarioItem.getId()%> - <%=voUsuarioItem.getUsuario()%></a></h3>
-                                        <a href="#" onclick="consultarUsuario(<%=voUsuarioItem.getId()%>);" class="search-link">perfil: <%=voUsuarioItem.getPerfil()%></a>
+                                        <a href="#" onclick="consultarUsuario(<%=voUsuarioItem.getId()%>);" class="search-link"><%=voUsuarioItem.getNombre()%> <%=voUsuarioItem.getPaterno()%> <%=voUsuarioItem.getMaterno()%></a>
                                         <p>
-                                            <%=voUsuarioItem.getNombre()%> <%=voUsuarioItem.getPaterno()%> <%=voUsuarioItem.getMaterno()%>
+                                            perfil: <%=voUsuarioItem.getPerfil()%>, sucursal: <%=voUsuarioItem.getSucursal()%>.
                                         </p>
                                     </div>                    
                                 <%                            

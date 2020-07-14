@@ -56,7 +56,7 @@ public class DAOUsuario {
         try{
             voUsuario.setId(obtenerId());
             cn = Conexion.getConexion();
-            pr = cn.prepareStatement("INSERT INTO Usuario VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            pr = cn.prepareStatement("INSERT INTO Usuario VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             pr.setInt(1, voUsuario.getId());
             pr.setString(2, voUsuario.getUsuario());
             pr.setString(3, voUsuario.getPerfil());
@@ -72,6 +72,7 @@ public class DAOUsuario {
             pr.setString(13, voUsuario.getTelefono());
             pr.setString(14, voUsuario.getCorreo());
             pr.setString(15, voUsuario.getSucursal());
+            pr.setString(16, voUsuario.getCarrito());
             pr.executeUpdate();                    
             return "";
         } catch(SQLException ex){
@@ -128,6 +129,7 @@ public class DAOUsuario {
                 resultado.setTelefono(rs.getString("telefono"));
                 resultado.setCorreo(rs.getString("correo"));
                 resultado.setSucursal(rs.getString("sucursal"));
+                resultado.setCarrito(rs.getString("carrito"));
                 resultados.add(resultado);
             }
         } catch(SQLException ex){
@@ -176,6 +178,7 @@ public class DAOUsuario {
                 voUsuario.setTelefono(rs.getString("telefono"));
                 voUsuario.setCorreo(rs.getString("correo"));
                 voUsuario.setSucursal(rs.getString("sucursal"));
+                voUsuario.setCarrito(rs.getString("carrito"));
                 return "";
             }
             return "Error, usuario no encontrado.";
@@ -225,7 +228,8 @@ public class DAOUsuario {
                 voUsuario.setMunicipio(rs.getString("municipio"));
                 voUsuario.setTelefono(rs.getString("telefono"));
                 voUsuario.setCorreo(rs.getString("correo"));
-                voUsuario.setSucursal(rs.getString("correo"));
+                voUsuario.setSucursal(rs.getString("sucursal"));
+                voUsuario.setCarrito(rs.getString("carrito"));
                 return "";
             }
             return "Error al identificar usuario.";
@@ -267,7 +271,8 @@ public class DAOUsuario {
                     "municipio='" + voUsuario.getMunicipio() + "', "+
                     "telefono='" + voUsuario.getTelefono() + "', "+
                     "correo='" + voUsuario.getCorreo() + "', "+
-                    "sucursal='" + voUsuario.getSucursal() + "' " +
+                    "sucursal='" + voUsuario.getSucursal() + "', " +
+                    "carrito='" + voUsuario.getCarrito() + "' " +
                 "WHERE id=" + voUsuario.getId();
             System.out.println("QUERY[" + sQuery+ "]");
             renglonesAfectados = st.executeUpdate(sQuery);
@@ -322,6 +327,7 @@ public class DAOUsuario {
                 resultado.setTelefono(rs.getString("telefono"));
                 resultado.setCorreo(rs.getString("correo"));
                 resultado.setSucursal(rs.getString("sucursal"));
+                resultado.setCarrito(rs.getString("carrito"));
                 resultados.add(resultado);
             }
         } catch(SQLException ex){

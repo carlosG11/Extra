@@ -73,7 +73,7 @@
 
 	<!-- Forma -->
 	<!-- Back to top -->
-        <form class="comment-form" name="registrarCita" method="post" action="SVTClienteCitaRegistrar" >
+        <form class="comment-form" name="registrarCita" method="post" action="SVTClienteCitaRegistrar" onsubmit="return verificarEnvio();">
 	<div class="container">
             <div class="row">
                 <div class="section-title">
@@ -84,7 +84,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="input-group mb-3">
-                        <label for="sucursal">Sucursal</label><br><p>
+                        <label for="sucursal">Sucursal<br><p></label>
                         <select class="browser-default custom-select " id="sucursal" name="sucursal" required disabled>
                             <option value="polanco" <%="polanco".equals(voCita.getSucursal())?"selected":""%>>Sucursal Polanco</option>
                             <option value="lindavista" <%="lindavista".equals(voCita.getSucursal())?"selected":""%>>Sucursal Llindavista</option>
@@ -149,7 +149,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="form-group row">
-                      <label for="duracion" >Precio<br><p></label>
+                      <label for="precio" >Precio<br><p></label>
                         <input class="form-control" type="text" value="<%=voCita.getPrecio()%>" id="precio" name="precio" disabled>
                     </div>                                                                                                                        
                 </div>
@@ -177,14 +177,14 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group row">
-                      <label for="caducidadMes" >Caducidad MM<br></label>
-                        <input type="text" id="caducidadMes" name="caducidadMes" class="form-control" pattern="01|02|03|04|05|06|07|08|09|10|11|12" placeholder="MM" required minlength=2 maxlength=2 >
+                      <label for="caducaMes" >Caducidad MM<br></label>
+                        <input type="text" id="caducaMes" name="caducaMes" class="form-control" pattern="01|02|03|04|05|06|07|08|09|10|11|12" placeholder="MM" required minlength=2 maxlength=2 >
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group row">
-                      <label for="caducidadAno" >Caducidad AA<br></label>
-                        <input type="text" id="caducidadAno" name="caducidadAno" class="form-control" pattern="01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30" placeholder="AA" required minlength=2 maxlength=2>
+                      <label for="caducaAno" >Caducidad AA<br></label>
+                        <input type="text" id="caducaAno" name="caducaAno" class="form-control" pattern="01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30" placeholder="AA" required minlength=2 maxlength=2>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -226,6 +226,22 @@
 	<!-- Footer section -->
         <jsp:include page="footer.jsp" /> 
         <script src="js/gijgo.min.js" type="text/javascript"></script>        
+        <script language="javascript">
+                        
+            function verificarEnvio(){
+                var importeTotal = parseFloat(document.registrarCita.precio.value);
+                var importeAnticipo = parseFloat(document.registrarCita.importe.value);
+                if (importeAnticipo<(importeTotal/2)){
+                    alert("No se puede registrar una cita con un importe menor a la mitad.");
+                    return false;
+                }
+                var elements = document.registrarCita.elements;
+                for (var i = 0, element; element = elements[i++];)
+                    element.disabled=false;
+                return true;
+            }
+            
+        </script>
         
 	<!-- Footer section end -->        
         

@@ -5,18 +5,21 @@
  */
 package aux2.servlet;
 
-import aux2.dao.DAOProducto;
+import aux2.app.Constantes;
+import aux2.dao.DAOUsuario;
+import aux2.vo.VOUsuario;
+import aux2.vo.VOProducto;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import aux2.vo.VOUsuario;
-import aux2.dao.DAOUsuario;
-import aux2.vo.VOProducto;
+import aux2.app.Constantes;
+import aux2.dao.DAOProducto;
 
 /**
  *
@@ -43,15 +46,14 @@ public class SVTClienteProductoConsultar extends HttpServlet {
             sResultado = DAOProducto.consultar(voProducto);
             //el usuario es un cliente
             request.setAttribute("mensaje","&Eacute;xito al consultar Producto(s).");
-            request.setAttribute("resultado",voProducto);
+            request.setAttribute("producto",voProducto);
             request.getRequestDispatcher("clienteProductoConsultar.jsp").forward(request, response);
         } catch(Exception exception){
             exception.printStackTrace();            
             request.setAttribute("mensaje","Error al consultar Producto: " + exception.getMessage());
-            request.getRequestDispatcher("clienteProductosBuscar.jsp").forward(request, response);
+            request.getRequestDispatcher("clienteProductoBuscar.jsp").forward(request, response);
         }       
     }
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

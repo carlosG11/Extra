@@ -26,6 +26,7 @@ public class VOUsuario {
     private String telefono;
     private String correo;
     private String sucursal;
+    private String carrito;
 
     public VOUsuario() {
         this.id = 0;
@@ -43,6 +44,15 @@ public class VOUsuario {
         this.telefono = "";
         this.correo = "";
         this.sucursal = "";
+        this.carrito = "";
+    }
+
+    public String getCarrito() {
+        return carrito;
+    }
+
+    public void setCarrito(String carrito) {
+        this.carrito = carrito;
     }
     
     public int getId() {

@@ -16,6 +16,9 @@
                                     <a class="nav-link" href="inicioCliente.jsp">Inicio</a>
                             </li>
                             <li class="nav-item">
+                                    <a class="nav-link" href="SVTClienteProductoDesplegar">Servicios</a>
+                            </li>
+                            <li class="nav-item">
                                     <a class="nav-link" href="clienteCitaBuscar.jsp">Buscar Citas</a>
                             </li>
                             <li class="nav-item">
@@ -25,7 +28,7 @@
                                     <a class="nav-link" href="clientePerfilConsultar.jsp">Mi Perfil</a>
                             </li>
                             <li class="nav-item">
-                                    <a class="nav-link" href="SVTClienteProductoDesplegar">Productos</a>
+                                    <a class="nav-link" href="SVTClienteCarritoDesplegar">Mi Carrito</a>
                             </li>
                             <li class="nav-item">
                                     <a class="nav-link" href="salir.jsp">Salir</a>

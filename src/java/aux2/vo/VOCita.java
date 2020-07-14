@@ -24,9 +24,11 @@ public class VOCita {
     private String clientePaterno;
     private String clienteMaterno;
     private Date  tiempo;
+    private Date  tiempoFin;
     private int duracion; //minutos
     private float precio; 
     private float saldo; 
+    private String estatus;
     private ArrayList <VOProducto>productos;
     private ArrayList <VOPago>pagos;
     private String[] sProductos;
@@ -46,10 +48,27 @@ public class VOCita {
         this.duracion = 0;
         this.precio = 0;
         this.saldo = 0;
+        this.estatus = "";
         this.productos = new ArrayList();
         this.pagos = new ArrayList();
     }
+
+    public Date getTiempoFin() {
+        return tiempoFin;
+    }
+
+    public void setTiempoFin(Date tiempoFin) {
+        this.tiempoFin = tiempoFin;
+    }
     
+    public String getEstatus() {
+        return estatus;
+    }
+
+    public void setEstatus(String estatus) {
+        this.estatus = estatus;
+    }
+
     public int getCliente() {
         return cliente;
     }
@@ -185,7 +204,5 @@ public class VOCita {
 
     public void setSaldo(float saldo) {
         this.saldo = saldo;
-    }
-    
-
+    }    
 }

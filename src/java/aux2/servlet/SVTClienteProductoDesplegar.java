@@ -24,7 +24,7 @@ import aux2.dao.DAOProducto;
  *
  * @author QTK
  */
-@WebServlet(name = "SVTClienteProductoDesplegar", urlPatterns = {"/SVTClienteProductoDesplegar"})
+@WebServlet(name = "SVTClienteCitaDesplegar", urlPatterns = {"/SVTClienteCitaDesplegar"})
 public class SVTClienteProductoDesplegar extends HttpServlet {
 
     /**
@@ -46,7 +46,7 @@ public class SVTClienteProductoDesplegar extends HttpServlet {
             exception.printStackTrace();            
             request.setAttribute("mensaje","Error al buscar Productos: " + exception.getMessage());
         } finally {
-            request.getRequestDispatcher("clienteProductosBuscar.jsp").forward(request, response);
+            request.getRequestDispatcher("clienteProductoBuscar.jsp").forward(request, response);
         }       
     }
 

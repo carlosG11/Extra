@@ -1,5 +1,14 @@
 <%@page contentType="text/html" language="java" import="java.util.*,aux2.vo.VOUsuario,aux2.vo.VOProducto" session="true" pageEncoding="UTF-8"%>
-<%
+<%!    
+    private String verificarEnCarrito(int id, String sCarrito){
+        String[] sProductos = sCarrito.split(",");
+        for (int i=0;i<sProductos.length;i++){
+            if (sProductos[i].equals(""+id))
+                return "selected";
+        }
+        return "";
+    }
+%><%
     String sMensaje= (String)request.getAttribute("mensaje");
     session = request.getSession();
     VOUsuario voUsuario = (VOUsuario)session.getAttribute("usuario");
@@ -107,7 +116,7 @@
                                                                     for(int i=0;i<resultados.size();i++){
                                                                         voProductoItem = (VOProducto)resultados.get(i);                                                                        
                                                                 %>
-                                                                    <option value="<%=voProductoItem.getId()%>" onclick="refrescarSaldos()"><%=voProductoItem.getNombre()%>, duracion:<%=voProductoItem.getDuracion()%> min., precio:$<%=voProductoItem.getPrecio()%></option>
+                                                                    <option value="<%=voProductoItem.getId()%>" onclick="refrescarSaldos()" <%=verificarEnCarrito(voProductoItem.getId(), voUsuario.getCarrito())%>><%=voProductoItem.getNombre()%>, duracion:<%=voProductoItem.getDuracion()%> min., precio:$<%=voProductoItem.getPrecio()%></option>
                                                                 <%                                                                    
                                                                     }                                                                                                                                         
                                                                 %>
@@ -191,6 +200,7 @@
                     }
                 }
             }            
+            refrescarSaldos();
                         
             function verificarEnvio(){
                 var dFechaHoy = new Date();
